@@ -1,2 +1,19 @@
-<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/home.css" />
 <h1>Codeial/ <%= title%></h1>
+<section id="feed-posts">
+  <h4>Posts</h4>
+  <form action="/posts/create" id="new-post-form" method="post">
+    <textarea name="content" id="" cols="30" rows="3" placeholder="Write Here.."></textarea>
+    <input type="submit" value="Post">
+  </form>
+  <div id="post-list-container">
+    <ul>
+      <% for(post of posts){ %>
+        <li>
+          <%= post.content%>
+          <%= post.user.name%>
+        </li>
+        <% }%>
+    </ul>
+  </div>
+</section>
